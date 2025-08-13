@@ -1,0 +1,51 @@
+site_name: Godot Mechanicus
+site_url: https://mydomain.org/
+repo_name: technolukas/godotmechanicus
+repo_url: https://github.com/TechnoLukas/GodotMechanicusProj
+
+markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
+
+theme:
+  name: material
+
+  features:
+    - navigation.tabs
+
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - About:
+    - index.md
+  - Docs:
+    - Welcome to docs: docs/index.md
+    - Camera: docs/camera.md
+    - Chains: docs/chains.md
+    - Vehicles:
+      - 4wh skid steering: docs/vehicles/2wh_differential_drive.md
+      - 2wh differential drive: docs/vehicles/4wh_skid_steering.md
+  - Community:
+    - community/index.md
+
+
