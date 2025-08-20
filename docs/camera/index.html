@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#camera-controls" class="md-skip">
+        <a href="#camera-controls-sweet_cameragd" class="md-skip">
           Skip to content
         </a>
       
@@ -478,19 +478,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Camera
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -502,34 +489,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -565,23 +524,9 @@
   
   
   
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../vehicles/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -590,65 +535,7 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
-            <span class="md-nav__icon md-icon"></span>
-            Vehicles
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vehicles/2wh_differential_drive/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    4wh skid steering
-    
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vehicles/4wh_skid_steering/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2wh differential drive
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -752,23 +639,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -786,9 +656,53 @@
   
 
 
-<h1 id="camera-controls">Camera Controls</h1>
-<h3 id="description">Description</h3>
-<p>Camera :)</p>
+<h1 id="camera-controls-sweet_cameragd">Camera Controls  [sweet_camera.gd]</h1>
+<p>Editor-like camera control. It allows user to draw around, around, zoom in/out, and fully interact with PhysicsBodies in 3d. It is made for debugging and messing around with physics.
+It has:</p>
+<ul>
+<li><strong>pivot point</strong> (half transparent sphere), the camera always rotates around it.</li>
+<li><strong>cursor</strong> (red sphere), the cursor appears when you interact with collision shape. </li>
+</ul>
+<video controls src="../../data/media/camera_showcase.mp4" autoplay></video>
+
+<p>Current features:</p>
+<ul>
+<li>RMB (right mouse button) to rotate around pivot</li>
+<li>Middle mouse button to drag camera around</li>
+<li>LMB (left mouse button) to "pick-up" any object and "throw" it. </li>
+<li>Scroll Wheel up/down to zoom in/out</li>
+<li>TAB to toggle camera controls, when turned off, pivot and cursor will be hidden.</li>
+</ul>
+<p>Script options:</p>
+<ul>
+<li>Camera Mode (tab_switch,always_active,always_deactive)</li>
+<li>Start Camera Pivot - The position that camera will look at (its pivot point) by default at the start of the scene.</li>
+<li>Start Camera Rotation - The rotation that camera will be rotated around pivot (degrees) by default at the start of the scene.</li>
+<li>
+<p>Start Camera Distance - The zoom/distance camera will be from pivot</p>
+</li>
+<li>
+<p>Do Draging - activates/disables user to drag camera around </p>
+</li>
+<li>Do Rotating - activates/disables user to rotate camera around</li>
+<li>Do Zooming - activates/disables user zoom in and zoom out</li>
+<li>
+<p>Do Grabing - activates/disables "pick-up" and "throw" mechanic</p>
+</li>
+<li>
+<p>Show Elements - If true, will show the pivot points and red cursor</p>
+</li>
+<li>Use Warning - If true, it will warn you if you accidentally drag on invisible object.</li>
+</ul>
+<p>This script <strong>is not dependant</strong> on other objects, they don't need to have any scripts attached.
+<strong>Only camera</strong> needs to have this script. The only requirement is that object had to be <strong>RigidBody3D</strong>... makes sense, you can not move StaticBody. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you have <strong>invisible/hidden objects</strong> with collision on the scene, you will see the red cursor colliding with them!
+I know, it is easy to forget about invisible/hidden objects on the scene, so if you ever accidentally click on invisible object, you will get a warning in the console. 
+If you don't want this behaviour, you can disable <strong>"use_warning"</strong> in the camera options.</p>
+</div>
+<p>Code from my repo: <a href="https://github.com/TechnoLukas/GodotMechanicusProj/blob/main/scripts/sweet_camera.gd">sweet_camera.gd</a></p>
 
 
 
